@@ -1,0 +1,91 @@
+.scrap {
+    background-image: url(../../vendor/img/hip-square.png);
+    grid-column: full-start / full-end;
+
+    display:grid;
+    grid-template-columns: repeat(2,1fr) repeat(2, minmax(30rem, .7fr)) repeat(2,1fr)  ;
+    padding: 5rem;
+    justify-items: center;
+
+     @media only screen and (max-width: $bp-largest) {
+        grid-template-columns: repeat(2,1fr) repeat(2, minmax(22rem, .7fr)) repeat(2,1fr)
+    }
+
+    &__line {
+        justify-self: stretch;
+    }
+
+    &__container{
+        grid-column: 3 / 5;
+
+        background-image: url(../../vendor/img/paper2.png);
+        box-shadow: $shadow-three;
+        border-radius: 3px;
+        padding: 2rem;
+        text-align: center;
+
+        display:grid;
+        justify-items: center;
+        align-items: center;
+        grid-gap: 1rem;
+    }
+/*Top Box */
+    &__img {
+        height: 12rem;
+        border-radius: 50%;
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+        transition: all .5s;
+        border: 2px dashed $color-two;
+
+        &:hover {
+            filter:blur(3px) brightness(80%);
+            transition: all .5s;
+        }
+
+        &:hover + .scrap__cap {
+            opacity: 1;
+            transition: all .5s;
+        }
+    }
+
+    &__cap{
+        text-transform: uppercase;
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+        font-size: 1.2rem;
+        color: $color-two;
+        opacity: 0;
+        z-index: 10;
+        transition: all .5s;
+        pointer-events: none;
+    }
+    &__p {
+        font-size: 1.5rem;
+        color:$color-four;
+        text-align: justify;
+
+    }
+    &__btn {
+        justify-self: end;
+    }
+
+
+/* Bottom Box */   
+    &__explain {
+        color:$color-four;
+        font-size: 2rem;
+        font-style: italic;
+        transition: all .2s;
+
+        &:hover {
+            transform: scale(1.1) skew(15deg);
+            transition: all .2s;
+        }
+    }
+}
+.bottom-box {
+    &__img {
+        transform: translateY(1rem);
+    }
+}

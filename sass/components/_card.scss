@@ -1,0 +1,27 @@
+.card {
+    perspective: 150rem;
+    -moz-perspective: 150rem;
+    position: relative;
+    user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+
+    &__front {
+        position: relative;
+        box-shadow: $shadow-five;
+        transition: all 1s ease;
+    }
+
+    &__back {
+        box-shadow: $shadow-five;
+        transform: rotateY(180deg);
+        position: absolute;
+        top:0;
+        left:0;
+        overflow: hidden;
+        backface-visibility: hidden;
+        transition: all 1s ease;
+    }
+}

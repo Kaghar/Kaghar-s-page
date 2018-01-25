@@ -1,0 +1,60 @@
+.footer {
+    grid-column: col-start 3 / col-start 7;
+    
+    &__git {
+        @include flexcenter;
+        padding-bottom: 1rem;
+        
+        &--link {
+            &:link,
+            &:active{
+                text-decoration: none;
+                display:flex;
+                justify-content: center;
+            }
+
+        }
+        &--icon{
+            font-size: 4rem;
+            color: $color-two;
+        }
+    }
+
+    &__foot{
+        @include flexcenter;
+        flex-direction: column;
+        color: $color-two;
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+    }
+}
+
+.contact {
+    display:grid;
+    grid-template-columns: repeat(2,minmax(max-content,max-content));
+    justify-content: center;
+    grid-gap: 1rem;
+    padding: 1rem;
+    font-size: 2rem;
+    color:$color-three;
+
+    @media only screen and (max-width: $bp-large) {
+        grid-gap: .5rem;
+        padding: .5rem;
+        font-size: 1.3rem;
+    }
+       
+    &__btn{
+        justify-self: center;
+        grid-column: 1 / -1;
+    }
+
+    &__message {
+       grid-column: 1 / -1;
+       text-align: center;
+    }
+}
+
+.error {
+    color: $color-fail;
+}

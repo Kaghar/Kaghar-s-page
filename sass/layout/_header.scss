@@ -1,0 +1,30 @@
+.header {
+    background-image: linear-gradient(rgba(0,0,0,.9), rgba(0,0,0,.9)) ,url(../../vendor/img/hero-min.jpg);
+    background-size: cover;
+    background-position: center;
+    z-index: 9998;
+    
+    grid-column: full-start / full-end;
+    
+    display:grid;
+    grid-template-rows: 1fr repeat(2,min-content) 1fr;
+    grid-template-columns: minmax(min-content, max-content);
+    grid-gap: 2rem;
+    justify-content: center;
+
+    &__scrapper {
+        width: 100rem;
+        height: auto;
+        grid-row: 2 / 3;
+        grid-column: 2 / 3;
+        @media only screen and (max-width: $bp-large) {
+            width: 80rem;
+        }
+        @media only screen and (max-width: $bp-medium) {
+            width: 60rem;
+        }
+        @media only screen and (max-width: $bp-small) {
+            width: 40rem;
+        }
+    }
+}

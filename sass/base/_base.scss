@@ -1,0 +1,80 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+
+    @media only screen and (max-width: $bp-largest) {
+        font-size: 50%;
+    }
+}
+
+
+
+.break {
+    grid-column: full-start / full-end;
+    height: 3vh;
+}
+
+.nav-1 {
+    background-image: linear-gradient(rgba($color-five, 0), rgba($color-eight, .95) ) ,url(../../vendor/img/paper2.png);
+    z-index: 9999;
+}
+
+
+.first {
+    background-image: linear-gradient(rgba($color-eight, .95), rgba($color-seven, .6) ) ,url(../../vendor/img/hip-square.png);
+}
+
+
+.second {
+    background-image: linear-gradient(rgba($color-seven, .6), rgba($color-six, .3) ) ,url(../../vendor/img/hip-square.png);
+}
+
+.third {
+    background-image: linear-gradient(rgba($color-six, .3), rgba($color-five, 0) ) ,url(../../vendor/img/hip-square.png);
+    
+}
+
+.fourth {
+    background-image: linear-gradient(rgba($color-five, 0), rgba($color-six, .3) ) ,url(../../vendor/img/hip-square.png);
+}
+
+.fifth{
+    background-image: linear-gradient(rgba($color-six, .3), rgba($color-seven, .5) ) ,url(../../vendor/img/hip-square.png);
+}
+
+.sixth{
+    background-image: linear-gradient(rgba($color-seven, .5), rgba($color-eight, .95) ) ,url(../../vendor/img/hip-square.png);
+}
+.seventh{
+    background-image: linear-gradient(rgba($color-eight, .95), rgba($color-seven, .6) ) ,url(../../vendor/img/paper2.png);
+}
+.eighth{
+    background-image: linear-gradient(rgba($color-seven, .6), rgba($color-six, .3) ) ,url(../../vendor/img/paper2.png);
+}
+.ninth{
+    background-image: linear-gradient(rgba($color-six, .3), rgba($color-five, 0) ) ,url(../../vendor/img/paper2.png);
+}
+
+
+.container {
+    display:grid;
+    grid-template-rows: 7rem 3vh calc(100vh - 7rem - 3vh);
+    grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem)[col-end]) [center-end] minmax(6rem, 1fr) [full-end];
+    background-image: url(../../vendor/img/paper2.png);
+    @media only screen and (max-width: $bp-largest) {
+        grid-template-rows: 9rem 3vh calc(100vh - 9rem - 3vh); 
+    }
+    @media only screen and (max-width: $bp-large) {
+        grid-template-rows: 7rem 3vh calc(100vh - 7rem - 3vh); 
+    }
+}
+

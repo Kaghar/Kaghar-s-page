@@ -1,0 +1,187 @@
+.nav {
+    grid-column: center-start / center-end;
+    z-index: 9998;
+    &__box{
+        display:flex;
+        justify-content: space-around;
+        
+        list-style: none;
+        transform: translateY(-2rem);
+
+        @media only screen and (max-width: $bp-largest) {
+            transform: translateY(-1rem); 
+        }
+
+        &--item{
+            text-decoration: none;
+            position: relative;
+
+            &:link,
+            &:visited{
+                color: $color-three;
+                font-size: 1.5rem;
+                padding:1rem;
+                border-bottom: 1px solid $color-two transparent;
+                transition: all .5s;
+
+                &:hover{
+                    border-bottom: 1px solid $color-two;
+                    color: $color-two;
+                    transition: all .5s;
+                }
+
+                &:hover .nav__box--item-img-blue{
+                    opacity:1;
+                    transition: all .3s;
+                    @media only screen and (max-width: $bp-large) {
+                        height: 3rem;
+                        width: auto
+                    }
+
+                }
+                &:hover .nav__box--item-img{
+                    opacity:0;
+                    transition: all .3s;
+                    @media only screen and (max-width: $bp-large) {
+                        height: 3rem;
+                        width: auto
+                    }
+                }
+            }
+            &-img{
+                transform: translateY(1rem);
+                transition: all .3s;
+                opacity:1;
+
+                @media only screen and (max-width: $bp-large) {
+                    height: 3rem;
+                    width: auto
+                }
+
+                &-blue{
+                    position: absolute;
+                    opacity: 0;
+                    &-S{
+                        top:-.7rem;
+                        left:.9rem;
+                    }
+                    &-P{
+                        top:-.5rem;
+                        left:1rem;
+                    }
+                    &-B{
+                        top:-.5rem;
+                        left:1rem;
+                    }
+                    &-C{
+                        top:-.5rem;
+                        left:1rem;
+                    }
+                }
+            }
+        }
+    }
+}
+.sidenav{
+    position: fixed;
+    top: calc(50% - 18rem);
+    right: -15rem;
+    background-image: url(../../vendor/img/paper2.png);
+    box-shadow: $shadow-four;
+    padding: 1rem;
+    border-radius: 3px;
+    transition: all .5s;
+    z-index: 9997;
+
+    @media only screen and (max-width: $bp-small) {
+        padding: .2rem;
+        top: calc(50% - 14rem);
+    }
+
+    &:hover {
+        right: 1rem;
+        transition: all .5s;
+    }
+    
+    &__show{
+        background-image: url(../../vendor/img/paper2.png);
+        border-radius: 50%;
+        height: 6rem;
+        width: 6rem;
+        cursor: pointer;
+        box-shadow: $shadow-four;
+        position: absolute;
+        top:16rem;
+        left: -7rem;
+        fill:$color-two;
+
+        &--icon{
+            color: $color-two;
+            font-size: 5rem;
+            position: absolute;
+            top: .2rem;
+            left: 1.2rem;
+            @media only screen and (max-width: $bp-large) {
+                font-size: 4rem;
+            }
+            @media only screen and (max-width: $bp-medium) {
+                top: -.2rem;
+                left: .7rem;
+            }
+        }
+        
+
+        @media only screen and (max-width: $bp-large) {
+            height: 5rem;
+            width: 5rem;
+        }
+        @media only screen and (max-width: $bp-medium) {
+            height: 4rem;
+            width: 4rem;
+        }
+        @media only screen and (max-width: $bp-small) {
+            left: -8rem;
+        }
+        
+    }
+    
+    &__box {
+        list-style: none;
+        transition: right 1s;
+        position: relative;
+        
+        & > * {
+            padding: 1rem;
+
+            @media only screen and (max-width: $bp-large) {
+                padding: .5rem;
+            }
+
+        }
+
+        &--link {
+            &:link,
+            &:visited {
+                text-decoration: none;
+                display:flex;
+                justify-content: center;
+            }
+        }
+
+        &--icon {
+            font-size: 5rem;
+            font-weight: 900;
+            color: $color-three;
+            z-index: 200;
+            transition: all .5s;
+
+            
+            &:hover {
+                color: $color-two;
+                transition: all .5s;
+            }
+        }
+    }
+}
+
+
